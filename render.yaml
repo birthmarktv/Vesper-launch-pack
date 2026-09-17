@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vesper-launch-pack
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python seller.py
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SETTLER_KEY
+        sync: false  # set in dashboard: hot key that pays Base gas only
+      - key: BASE_RPC_URL
+        value: https://mainnet.base.org
